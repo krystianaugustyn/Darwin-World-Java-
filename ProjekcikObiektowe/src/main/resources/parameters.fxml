@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            minHeight="750.0" minWidth="850.0"
+            fx:controller="SerceProjektu.presenter.ParametersPresenter">
+
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Darwin World Configuration" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <GridPane alignment="CENTER" hgap="10" vgap="8">
+                <Label text="Map Width:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="mapWidth" text="15" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Map Height:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <TextField fx:id="mapHeight" text="15" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                <Label text="Initial Animal Energy:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <TextField fx:id="startEnergy" text="40" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Energy from Eating Grass:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="grassEnergy" text="15" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Daily Energy Loss:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <TextField fx:id="dailyCost" text="1" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <Label text="Initial Animal Count:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <TextField fx:id="animalsCount" text="4" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="Daily Grass Growth:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                <TextField fx:id="grassPerDay" text="4" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+                <Label text="Initial Grass Count:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                <TextField fx:id="startGrass" text="10" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+
+                <Label text="Energy Required for Reproduction:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <TextField fx:id="energyNeededToMultiplicate" text="15" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+                <Label text="Energy Lost for Reproduction:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+                <TextField fx:id="energyLostToMultiplicate" text="10" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+
+                <Label text="Minimum Mutations:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                <TextField fx:id="minMutation" text="0" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+
+                <Label text="Maximum Mutations:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+                <TextField fx:id="maxMutation" text="10" GridPane.columnIndex="1" GridPane.rowIndex="11"/>
+
+                <Label text="Genome Length:" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+                <TextField fx:id="genLength" text="10" GridPane.columnIndex="1" GridPane.rowIndex="12"/>
+
+                <Label text="Map Variant:" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+                <CheckBox fx:id="mapVariant" GridPane.columnIndex="1" GridPane.rowIndex="13"/>
+
+                <Label text="Minimum Grass Energy:" GridPane.columnIndex="0" GridPane.rowIndex="14"/>
+                <TextField fx:id="minGrassEnergy" text="5" GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+
+                <Label text="Maximum Grass Energy:" GridPane.columnIndex="0" GridPane.rowIndex="15"/>
+                <TextField fx:id="maxGrassEnergy" text="10" GridPane.columnIndex="1" GridPane.rowIndex="15"/>
+
+                <Label text="Minimum Energy To Kill:" GridPane.columnIndex="0" GridPane.rowIndex="16"/>
+                <TextField fx:id="minEnergyToKill" text="30" GridPane.columnIndex="1" GridPane.rowIndex="16"/>
+
+            </GridPane>
+
+            <Separator prefWidth="200.0" />
+
+            <Label text="Configuration Management" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Load Preset:" />
+                <ComboBox fx:id="presetComboBox" onAction="#onPresetSelected" prefWidth="200.0" promptText="Select a preset..." />
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Save New:" />
+                <TextField fx:id="newPresetName" promptText="Configuration Name" />
+                <Button fx:id="savePresetButton" text="Save Preset" onAction="#onSavePresetClicked" />
+            </HBox>
+
+            <Separator prefWidth="200.0" />
+
+            <Button text="Start Simulation"
+                    style="-fx-font-size: 16px; -fx-base: #b6e7c9;"
+                    minWidth="200"
+                    onAction="#onSimulationStartClicked"/>
+        </VBox>
+    </center>
+
+</BorderPane>

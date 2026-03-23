@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            minHeight="600.0" minWidth="950.0"
+            fx:controller="SerceProjektu.presenter.SimulationPresenter">
+
+    <center>
+        <VBox alignment="CENTER" style="-fx-background-color: #dddddd;">
+            <Canvas fx:id="mapCanvas" width="500" height="500" />
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="10" alignment="TOP_LEFT" style="-fx-background-color: #eeeeee; -fx-border-color: #aaaaaa; -fx-border-width: 0 0 0 1;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            <Label text="STATYSTYKI" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+            <Label text="Liczba zwierząt:" />
+            <Label fx:id="statAnimalCount" text="0" style="-fx-font-weight: bold;"/>
+
+            <Label text="Liczba roślin:" />
+            <Label fx:id="statGrassCount" text="0" style="-fx-font-weight: bold;"/>
+
+            <Label text="Wolne pola:" />
+            <Label fx:id="statFreeFields" text="0" style="-fx-font-weight: bold;"/>
+
+            <Label text="Popularny genotyp:" />
+            <Label fx:id="statGenotype" text="-" wrapText="true" maxWidth="200" style="-fx-font-size: 10px;"/>
+
+            <Label text="Średnia energia:" />
+            <Label fx:id="statAvgEnergy" text="0" style="-fx-font-weight: bold;"/>
+
+            <Label text="Śr. długość życia (martwe):" />
+            <Label fx:id="statAvgLifespan" text="0" style="-fx-font-weight: bold;"/>
+
+            <Label text="Śr. liczba dzieci:" />
+            <Label fx:id="statAvgChildren" text="0" style="-fx-font-weight: bold;"/>
+        </VBox>
+    </right>
+
+    <left>
+        <VBox spacing="10" alignment="TOP_LEFT" style="-fx-background-color: #eeeeee; -fx-border-color: #aaaaaa; -fx-border-width: 0 1 0 0;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="ŚLEDZENIE ZWIERZAKA" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+            <Label text="Status:" />
+            <Label fx:id="trackedStatus" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Genom:" />
+            <Label fx:id="trackedGenom" text="-" wrapText="true" maxWidth="200" style="-fx-font-size: 10px;"/>
+
+            <Label text="Aktywny gen:" />
+            <Label fx:id="trackedActiveGene" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Energia:" />
+            <Label fx:id="trackedEnergy" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Zjedzone rośliny:" />
+            <Label fx:id="trackedPlants" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Dzieci:" />
+            <Label fx:id="trackedChildren" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Potomkowie:" />
+            <Label fx:id="trackedDescendants" text="-" style="-fx-font-weight: bold;"/>
+
+            <Label text="Wiek / Dzień śmierci:" />
+            <Label fx:id="trackedAge" text="-" style="-fx-font-weight: bold;"/>
+        </VBox>
+    </left>
+
+    <bottom>
+        <VBox alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label fx:id="infoLabel" text="Symulacja trwa..." />
+            <Button fx:id="pauseButton" text="Pauza" onAction="#onPauseClicked" />
+        </VBox>
+    </bottom>
+</BorderPane>
